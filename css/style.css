@@ -24,7 +24,8 @@ select{
     display: flex;
     
 }
-#card{
+.card{
+    display: flex;
     height: 70px;
     width: 150px;
     border-color: black;

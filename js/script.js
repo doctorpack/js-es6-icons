@@ -1,3 +1,4 @@
+let container =document.querySelector(".card")
 const arrIcons = [
 	{
 		name: 'cat',
@@ -112,3 +113,22 @@ const arrIcons = [
 		color: 'blue'
 	}
 ];
+generatormembers();
+// Una volta definita la struttura dati, prendendo come riferimento la card di esempio presente nell'html, stampare dinamicamente le card 
+
+function generatormembers(){
+    // scorro con un ciclo for l'array di oggetti
+    for(let i = 0; i < arrIcons.length; i++){
+        // newCard contiene il codice HTML che andrò ad inserire nel file index.html
+        let newCard = 
+        `<div class="card">
+                    <h3>${arrIcons[i].name}</h3>
+                    <p>${arrIcons[i].prefix}</p>
+                    <p>${arrIcons[i].type}</p>
+                    <p>${arrIcons[i].family}</p>
+                    <p>${arrIcons[i].color}</p>
+        </div>`
+            // inserisco nel file HTML il contenuto di newcard
+        container.innerHTML += newCard;
+    }
+}
