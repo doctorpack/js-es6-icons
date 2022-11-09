@@ -1,0 +1,33 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    color: rgb(0, 253, 253);
+}
+h2{
+    color: white;
+}
+.filter-zone{
+    background-color: rgb(3, 248, 248);
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+select{
+    height: 35%;
+}
+
+.cards-container{
+    display: flex;
+    
+}
+#card{
+    height: 70px;
+    width: 150px;
+    border-color: black;
+    border: solid 2px;
+    
+}
