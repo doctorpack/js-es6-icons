@@ -122,6 +122,8 @@ renderIcons(arrIcons, eleIconsContainer);
 eleSelect.addEventListener('change', filterIcons);
 
 
+// FUNCTIONS
+
 function renderIcons(arrData, eleContainer) {
 	eleContainer.innerHTML = '';
 	arrData.forEach(objIcon => eleContainer.innerHTML += generateCard(objIcon));
@@ -137,23 +139,28 @@ function generateCard(objData) {
 }
 
 function populateSelect(arrData, eleSelect) {
+	
 	const arrTypes = [];
-	arrData.forEach(objIcon => arrTypes.includes(objIcon.type) ? '' : arrTypes.push(objIcon.type))
+	arrData.forEach(objIcon => arrTypes.includes(objIcon.type) ? '' : arrTypes.push(objIcon.type));
+
 
 	console.log(arrTypes);
+
+	
 	arrTypes.forEach(type => eleSelect.innerHTML += `<option value="${type}">${type}</option>`);
 }
 
 function filterIcons() {
-	const selectedType = this.value; 
-
-	// filtrare array
+	const selectedType = this.value;
+	
 	if (selectedType !== '') {
 		arrIconsFiltered = arrIcons.filter(objIcon => objIcon.type === selectedType)
 	} else {
 		arrIconsFiltered = arrIcons;
 	}
 	console.log(arrIconsFiltered);
+
+	
 	renderIcons(arrIconsFiltered, eleIconsContainer);
 }
 
